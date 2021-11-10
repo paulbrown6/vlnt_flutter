@@ -1,9 +1,9 @@
 import 'dart:async';
 import 'package:dio_http/dio_http.dart';
 import 'package:flutter/material.dart';
-import 'package:mobile_logi/retrofit/api.dart';
-import 'package:mobile_logi/validator/text_field_validator.dart';
-import 'package:mobile_logi/viewmodels/form_view_model.dart';
+import 'package:vlnt_flutter/retrofit/api.dart';
+import 'package:vlnt_flutter/validator/text_field_validator.dart';
+import 'package:vlnt_flutter/viewmodels/form_view_model.dart';
 
 class FormViewModelImpl extends FormViewModel{
 

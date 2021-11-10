@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_logi/viewmodels/impl/form_view_model_impl.dart';
+import 'package:vlnt_flutter/viewmodels/impl/form_view_model_impl.dart';
 
 class EmailField extends StatefulWidget{
 

@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:mobile_logi/pages/auth_page.dart';
-import 'package:mobile_logi/pages/start_page.dart';
+import 'package:vlnt_flutter/pages/auth_page.dart';
+import 'package:vlnt_flutter/pages/start_page.dart';
 
 void main() {
   runApp(const MyApp());

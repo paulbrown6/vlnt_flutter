@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_logi/viewmodels/impl/form_view_model_impl.dart';
-import 'package:mobile_logi/widgets/bicolor_text.dart';
-import 'package:mobile_logi/widgets/checkbox_text.dart';
-import 'package:mobile_logi/widgets/email_field.dart';
-import 'package:mobile_logi/widgets/error_text.dart';
-import 'package:mobile_logi/widgets/password_field.dart';
+import 'package:vlnt_flutter/viewmodels/impl/form_view_model_impl.dart';
+import 'package:vlnt_flutter/widgets/bicolor_text.dart';
+import 'package:vlnt_flutter/widgets/checkbox_text.dart';
+import 'package:vlnt_flutter/widgets/email_field.dart';
+import 'package:vlnt_flutter/widgets/error_text.dart';
+import 'package:vlnt_flutter/widgets/password_field.dart';
 
 import 'gradient_button.dart';
 

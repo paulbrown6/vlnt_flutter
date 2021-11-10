@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mobile_logi/viewmodels/impl/form_view_model_impl.dart';
-import 'package:mobile_logi/widgets/login_form.dart';
-import 'package:mobile_logi/widgets/toolbar.dart';
+import 'package:vlnt_flutter/viewmodels/impl/form_view_model_impl.dart';
+import 'package:vlnt_flutter/widgets/login_form.dart';
+import 'package:vlnt_flutter/widgets/toolbar.dart';
 
 class AuthPage extends StatefulWidget {
   const AuthPage({Key? key}) : super(key: key);
