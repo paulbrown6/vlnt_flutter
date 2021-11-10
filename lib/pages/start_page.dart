@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:vlnt_flutter/widgets/gradient_button.dart';
+import 'package:vlnt_flutter/widgets/buttons/gradient_button.dart';
 import 'auth_page.dart';
 
 class StartPage extends StatelessWidget{

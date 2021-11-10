@@ -16,15 +16,6 @@ class _PasswordField extends State<PasswordField> {
   FormViewModelImpl _viewModel = FormViewModelImpl();
 
   @override
-  void dispose() {
-    if (_viewModel.outputErrorLogin.last as bool) {
-      _viewModel.inputPasswordText.close();
-      controllerPassword.dispose();
-    }
-    super.dispose();
-  }
-
-  @override
   void initState() {
     controllerPassword.addListener(
         () => _viewModel.inputPasswordText.add(controllerPassword.text));

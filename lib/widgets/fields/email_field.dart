@@ -16,15 +16,6 @@ class _EmailField extends State<EmailField>{
   FormViewModelImpl _viewModel = FormViewModelImpl();
 
   @override
-  void dispose() {
-    if (_viewModel.outputErrorLogin.last as bool) {
-      _viewModel.inputEmailText.close();
-      controllerEmail.dispose();
-    }
-    super.dispose();
-  }
-
-  @override
   void initState() {
     controllerEmail.addListener(
             () => _viewModel.inputEmailText.add(controllerEmail.text));

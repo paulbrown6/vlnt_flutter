@@ -17,12 +17,6 @@ class _AuthPage extends State {
   bool _isLogin = false;
 
   @override
-  void dispose() {
-    _isLogin = _viewModel.outputErrorLogin.last as bool;
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
@@ -74,7 +68,7 @@ class _AuthPage extends State {
                   stream: _viewModel.outputErrorLogin,
                   builder: (context, snapshot) {
                     debugPrint("errorLogin ${snapshot.data}");
-                    if (snapshot.data != null && snapshot.data! && _isLogin) {
+                    if (snapshot.data != null && snapshot.data!) {
                       return Container(
                         decoration: const BoxDecoration(
                           color: Color.fromARGB(250, 250, 250, 250),
