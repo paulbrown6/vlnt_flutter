@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:vlnt_flutter/pages/auth_page.dart';
+import 'package:vlnt_flutter/pages/profile_page.dart';
 import 'package:vlnt_flutter/pages/start_page.dart';
 
 void main() {
@@ -24,6 +24,7 @@ class _MyHomePage extends State<MyApp> {
       routes: {
         '/': (context) => StartPage(),
         '/auth': (context) => AuthPage(),
+        '/profile': (context) => ProfilePage(),
       },
     );
   }

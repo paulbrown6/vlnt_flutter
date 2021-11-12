@@ -3,6 +3,7 @@ import 'package:dio_http/dio_http.dart';
 import 'package:flutter/material.dart';
 import 'package:vlnt_flutter/entity/login_data.dart';
 import 'package:vlnt_flutter/retrofit/api.dart';
+import 'package:vlnt_flutter/scopedmodels/login_model.dart';
 import 'package:vlnt_flutter/validator/text_field_validator.dart';
 import 'package:vlnt_flutter/viewmodels/form_view_model.dart';
 
@@ -71,7 +72,10 @@ class FormViewModelImpl extends FormViewModel {
     }
     _loginController.add(event);
     debugPrint("event = $event");
-    if (event) dispose();
+    if (event) {
+      dispose();
+      LoginModel().setLogin(event);
+    }
   }
 
   dispose() {
