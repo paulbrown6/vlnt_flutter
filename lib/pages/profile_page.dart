@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:vlnt_flutter/icons/icons_custom_icons.dart';
 import 'package:vlnt_flutter/widgets/buttons/icon_text_button.dart';
 
 class ProfilePage extends StatelessWidget{
@@ -55,7 +56,7 @@ class ProfilePage extends StatelessWidget{
                       height: 10,
                     ),
                     IconTextButton(
-                        icon: Icons.assignment_outlined,
+                        icon: IconsCustom.news,
                         onPressed: () {},
                         buttonText: "Новости"
                     ),
@@ -63,7 +64,7 @@ class ProfilePage extends StatelessWidget{
                       height: 10,
                     ),
                     IconTextButton(
-                        icon: Icons.book_outlined,
+                        icon: IconsCustom.book,
                         onPressed: () {},
                         buttonText: "Обучение",
                     ),
