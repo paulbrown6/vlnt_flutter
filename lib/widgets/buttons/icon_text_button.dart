@@ -1,15 +1,23 @@
 import 'package:flutter/material.dart';
 
 class IconTextButton extends StatelessWidget {
-  const IconTextButton(
+
+   IconTextButton(
       {Key? key,
       required this.onPressed,
       required this.buttonText,
-      required this.icon})
+      required this.icon,
+        this.iconSize = 32,
+        this.fontSize = 12
+      })
       : super(key: key);
+
   final IconData icon;
   final GestureTapCallback onPressed;
   final String buttonText;
+  double iconSize;
+  double fontSize;
+
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +36,7 @@ class IconTextButton extends StatelessWidget {
               ),
               Icon(
                 icon,
-                size: 32,
+                size: iconSize,
                 color: Colors.white,
               ),
               SizedBox(
@@ -37,7 +45,7 @@ class IconTextButton extends StatelessWidget {
               Text(
                 buttonText,
                 style: TextStyle(
-                    fontSize: 12, color: Color.fromRGBO(255, 255, 255, 1)),
+                    fontSize: fontSize, color: Color.fromRGBO(255, 255, 255, 1)),
                 textAlign: TextAlign.center,
               ),
             ],

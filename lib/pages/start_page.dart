@@ -42,7 +42,7 @@ class StartPage extends StatelessWidget{
                                         return GradientButton(
                                           onPressed: () {
                                             model.getLogin() ?
-                                            Navigator.pushNamed(context, '/profile') :
+                                            Navigator.pushNamed(context, '/news') :
                                             Navigator.pushNamed(context, '/auth');
                                           },
                                           buttonText: 'Войти',

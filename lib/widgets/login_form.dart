@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:vlnt_flutter/viewmodels/impl/form_view_model_impl.dart';
 import 'package:vlnt_flutter/widgets/texts/bicolor_text.dart';
-import 'package:vlnt_flutter/widgets/checkbox_text.dart';
+import 'package:vlnt_flutter/widgets/texts/checkbox_text.dart';
 import 'package:vlnt_flutter/widgets/fields/email_field.dart';
 import 'package:vlnt_flutter/widgets/texts/error_text.dart';
 import 'package:vlnt_flutter/widgets/fields/password_field.dart';

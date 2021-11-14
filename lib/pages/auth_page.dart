@@ -4,7 +4,7 @@ import 'package:scoped_model/scoped_model.dart';
 import 'package:vlnt_flutter/scopedmodels/login_model.dart';
 import 'package:vlnt_flutter/viewmodels/impl/form_view_model_impl.dart';
 import 'package:vlnt_flutter/widgets/login_form.dart';
-import 'package:vlnt_flutter/widgets/toolbar.dart';
+import 'package:vlnt_flutter/widgets/toolbars/login_toolbar.dart';
 
 class AuthPage extends StatefulWidget {
   const AuthPage({Key? key}) : super(key: key);
@@ -23,7 +23,7 @@ class _AuthPage extends State {
         builder: (BuildContext context, Widget inChild, LoginModel model) {
           if (model.getLogin()){
             WidgetsBinding.instance!.addPostFrameCallback((timeStamp) {
-              Navigator.pushNamed(context, '/profile');
+              Navigator.pushNamed(context, '/news');
             });
             return Center(
               child: Container(
@@ -47,7 +47,7 @@ class _AuthPage extends State {
                   ),
                   child: Column(
                     children: [
-                      Toolbar(),
+                      ToolbarLogin(),
                       SizedBox(
                         height: 25,
                       ),
