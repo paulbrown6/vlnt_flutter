@@ -1,25 +1,29 @@
 import 'dart:async';
 import 'package:dio_http/dio_http.dart';
 import 'package:flutter/material.dart';
-import 'package:vlnt_flutter/entity/login_data.dart';
+import 'package:vlnt_flutter/entity/data/login_data.dart';
 import 'package:vlnt_flutter/retrofit/api.dart';
+import 'package:vlnt_flutter/retrofit/api_request.dart';
 import 'package:vlnt_flutter/scopedmodels/login_model.dart';
 import 'package:vlnt_flutter/validator/text_field_validator.dart';
 import 'package:vlnt_flutter/viewmodels/form_view_model.dart';
 
 class FormViewModelImpl extends FormViewModel {
 
-  static Dio dio = Dio();
-  static LoginData loginData = LoginData();
   static StreamController<String> _emailTextController = StreamController<String>.broadcast();
   static StreamController<String> _passwordTextController = StreamController<String>.broadcast();
   static StreamController<bool> _loginController = StreamController<bool>.broadcast();
+
+  static LoginData loginData = LoginData();
 
   @override
   Sink get inputEmailText => _emailTextController;
 
   @override
   Sink get inputPasswordText => _passwordTextController;
+
+  @override
+  Sink get inputLogin => _loginController;
 
   @override
   Stream<bool> get outputErrorEmail =>
@@ -47,35 +51,8 @@ class FormViewModelImpl extends FormViewModel {
 
   set password(String value) => loginData.password = value;
 
-  login() async {
-    bool event = false;
-    String login = loginData.login;
-    String password = loginData.password;
-    debugPrint("login is Start! login = $login || password = $password");
-    if (!login.isNotEmpty && !password.isNotEmpty) {
-      return;
-    }
-    dio.options.headers["Content-Type"] = "application/json";
-    final client = RestClient(dio);
-    try {
-      await client.signin({"username": login, "password": password}).then(
-        (response) {
-          if (response != null) {
-            debugPrint(response.accessToken);
-            event = true;
-          }},
-        onError: (error) {
-          debugPrint("Error: ${error.toString()}");
-      });
-    } catch (e) {
-      debugPrint(e.toString());
-    }
-    _loginController.add(event);
-    debugPrint("event = $event");
-    if (event) {
-      dispose();
-      LoginModel().setLogin(event);
-    }
+  login() {
+    ApiRequest().login(loginData.login, loginData.password);
   }
 
   dispose() {

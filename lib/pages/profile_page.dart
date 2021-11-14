@@ -2,11 +2,19 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:vlnt_flutter/viewmodels/impl/user_view_model_impl.dart';
 import 'package:vlnt_flutter/widgets/buttons/icon_text_button.dart';
 
-class ProfilePage extends StatelessWidget {
-
+class ProfilePage extends StatefulWidget {
   const ProfilePage({Key? key}) : super(key: key);
+
+  @override
+  State<ProfilePage> createState() => _ProfilePage();
+}
+
+class _ProfilePage extends State<ProfilePage> {
+  
+  UserViewModelImpl _userModel = UserViewModelImpl();
 
   @override
   Widget build(BuildContext context) {
@@ -30,8 +38,7 @@ class ProfilePage extends StatelessWidget {
                       child: ClipOval(
                         child: CachedNetworkImage(
                           fit: BoxFit.cover,
-                          imageUrl:
-                              "https://whatsism.com/uploads/posts/2018-07/1530546770_rmk_vdjbx10.jpg",
+                          imageUrl: "https://whatsism.com/uploads/posts/2018-07/1530546770_rmk_vdjbx10.jpg",
                           progressIndicatorBuilder:
                               (context, url, downloadProgress) =>
                                   CircularProgressIndicator(

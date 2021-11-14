@@ -16,21 +16,36 @@ class _RestClient implements RestClient {
   String? baseUrl;
 
   @override
-  Future<Response> signin(map) async {
+  Future<Authorization> signin(map) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(map);
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<Map<String, Response>>(
+        _setStreamType<Map<String, Authorization>>(
             Options(method: 'POST', headers: _headers, extra: _extra)
                 .compose(_dio.options, 'auth/login',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    print(_result);
-    print(_result.data!);
-    var value = Response.fromJson(_result.data!);
+    final value = Authorization.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<User> getProfile(token) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{r'Authorization': token};
+    _headers.removeWhere((k, v) => v == null);
+    final _data = <String, dynamic>{};
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<Map<String, User>>(
+        Options(method: 'GET', headers: _headers, extra: _extra)
+            .compose(_dio.options, 'Employee',
+                queryParameters: queryParameters, data: _data)
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = User.fromJson(_result.data!);
     return value;
   }
 
@@ -47,19 +62,3 @@ class _RestClient implements RestClient {
     return requestOptions;
   }
 }
-
-Response _$ResponseFromJson(Map<String, dynamic> json) {
-  return Response(
-    expirationAccessTime: json['expiration_access_time'].toString(),
-    refreshToken: json['refresh_token'].toString(),
-    expirationRefreshTime: json['expiration_refresh_time'].toString(),
-    accessToken: json['access_token'].toString(),
-  );
-}
-
-Map<String, dynamic> _$ResponseToJson(Response instance) => <String, dynamic>{
-  'expiration_access_time': instance.expirationAccessTime,
-  'refresh_token': instance.refreshToken,
-  'expiration_refresh_time': instance.expirationRefreshTime,
-  'access_token': instance.accessToken,
-};

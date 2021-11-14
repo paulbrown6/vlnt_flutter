@@ -13,13 +13,13 @@ class _NewsTabs extends State<NewsTabs> with SingleTickerProviderStateMixin {
   static String textPersonal = 'ПЕРСОНАЛЬНЫЕ';
   static String textAll = 'ОБЩИЕ';
   static Color tabColor = Color.fromRGBO(96, 167, 149, 1);
+  static Color textColor = Color.fromRGBO(63, 59, 93, 1);
 
   final List<Tab> myTabs = <Tab>[
     Tab(
       child: Text(
         textPersonal.toUpperCase(),
         style: TextStyle(
-          color: tabColor,
           fontSize: 12,
         ),
       ),
@@ -28,7 +28,6 @@ class _NewsTabs extends State<NewsTabs> with SingleTickerProviderStateMixin {
       child: Text(
         textAll.toUpperCase(),
         style: TextStyle(
-          color: tabColor,
           fontSize: 12,
         ),
       ),
@@ -60,6 +59,7 @@ class _NewsTabs extends State<NewsTabs> with SingleTickerProviderStateMixin {
         appBar: TabBar(
           controller: _tabController,
           tabs: myTabs,
+          unselectedLabelColor: textColor,
           labelColor: tabColor,
           indicatorColor: tabColor,
         ),
