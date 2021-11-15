@@ -2,7 +2,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 @JsonSerializable()
 class User {
-  String? id;
+  int? id;
   String? lastName;
   String? translitLastname;
   String? firstName;
@@ -54,24 +54,24 @@ class User {
   String? educationLevel;
   String? haveVolunteerExperience;
   String? haveTeamleadExperience;
-  String? userId;
+  int? userId;
   bool? isNeedLiveApartament;
   String? photo;
   String? clothesSize;
-  String? languages;
-  String? medicalRestrictions;
+  List<dynamic>? languages;
+  List<dynamic>? medicalRestrictions;
   String? passportFile;
   String? passportFileSecond;
   String? iTNFile;
   String? iNILAFile;
   String? volunteerBookFile;
   String? resumeFile;
-  String? education;
-  String? experience;
-  String? volunteerExperience;
-  String? teamleadExperience;
+  List<dynamic>? education;
+  List<dynamic>? experience;
+  List<dynamic>? volunteerExperience;
+  List<dynamic>? teamleadExperience;
   List<Application>? application;
-  String? vaccination;
+  List<dynamic>? vaccination;
   String? registrationAddrCity;
   String? registrationAddrSettlement;
   String? factAddrCity;
@@ -243,7 +243,7 @@ class User {
 
 User _$UserFromJson(Map<String, dynamic> json) {
   return User(
-    id: json['id'].toString(),
+    id: json['id'],
     lastName: json['lastName'],
     translitLastname: json['translitLastname'],
     firstName: json['firstName'],
@@ -313,7 +313,7 @@ User _$UserFromJson(Map<String, dynamic> json) {
     volunteerExperience: json['volunteerExperience'],
     teamleadExperience: json['teamleadExperience'],
     application: json['application'].forEach((v) {
-      var application;
+      var application = [];
       application.add(new Application.fromJson(v));
     }),
     vaccination: json['vaccination'],
@@ -325,7 +325,7 @@ User _$UserFromJson(Map<String, dynamic> json) {
 }
 
 class Application {
-  String id;
+  int id;
   String blockId;
   String managerId;
   String interviewDate;
@@ -333,8 +333,8 @@ class Application {
   bool isLeader;
   bool isReserve;
   String badge;
-  String employeeId;
-  String interviewAppointmentCount;
+  int employeeId;
+  int interviewAppointmentCount;
   String rejectReasonText;
   String jobOfferAt;
   String lastMailingShiftsHash;
@@ -347,11 +347,11 @@ class Application {
   Role role;
   String typeOfEmployee;
   String interviewResult;
-  String desiredFunction;
-  String desiredPosition;
+  List<dynamic> desiredFunction;
+  List<dynamic> desiredPosition;
   String position;
   String function;
-  String comments;
+  List<dynamic> comments;
   String rejectReason;
 
   Application(
@@ -458,7 +458,7 @@ Application _$ApplicationFromJson(Map<String, dynamic> json) {
 }
 
 class Status {
-  String id;
+  int id;
   String description;
 
   Status({required this.id, required this.description});
@@ -482,7 +482,7 @@ Status _$StatusFromJson(Map<String, dynamic> json) {
 }
 
 class Role {
-  String id;
+  int id;
   String description;
   bool isTemporary;
 

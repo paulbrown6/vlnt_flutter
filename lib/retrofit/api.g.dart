@@ -26,7 +26,7 @@ class _RestClient implements RestClient {
         _setStreamType<Map<String, Authorization>>(
             Options(method: 'POST', headers: _headers, extra: _extra)
                 .compose(_dio.options, 'auth/login',
-                    queryParameters: queryParameters, data: _data)
+                queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = Authorization.fromJson(_result.data!);
     return value;
@@ -36,16 +36,35 @@ class _RestClient implements RestClient {
   Future<User> getProfile(token) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{r'Authorization': token};
+    final _headers = <String, dynamic>{r'Authorization': "Bearer ${token}"};
     _headers.removeWhere((k, v) => v == null);
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<Map<String, User>>(
+            Options(method: 'GET', headers: _headers, extra: _extra)
+                .compose(_dio.options, 'Employee',
+                queryParameters: queryParameters, data: _data)
+                .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = User.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<List<News>> getNews(token, map) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{r'Authorization': "Bearer ${token}"};
+    _headers.removeWhere((k, v) => v == null);
+    final _data = <String, dynamic>{};
+    _data.addAll(map);
+    final _result = await _dio.fetch<List<dynamic>>(_setStreamType<List<News>>(
         Options(method: 'GET', headers: _headers, extra: _extra)
-            .compose(_dio.options, 'Employee',
+            .compose(_dio.options, 'news/list',
                 queryParameters: queryParameters, data: _data)
             .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = User.fromJson(_result.data!);
+    var value = _result.data!
+        .map((dynamic i) => News.fromJson(i as Map<String, dynamic>))
+        .toList();
     return value;
   }
 
