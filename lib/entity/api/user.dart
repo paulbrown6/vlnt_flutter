@@ -19,63 +19,63 @@ class User {
   bool? isInVolunteerCenter;
   String? volunteerCenter;
   String? birthday;
-  String? citizenshipCountryId;
-  String? registrationAddrCityId;
-  String? registrationAddrSettlementId;
-  String? registrationAddrSubwayId;
+  int? citizenshipCountryId;
+  int? registrationAddrCityId;
+  int? registrationAddrSettlementId;
+  int? registrationAddrSubwayId;
   String? registrationAddrStreet;
   String? registrationAddrBuilding;
   String? registrationAddrApt;
   bool? isSameAsRegistrationAddress;
-  String? factAddrCityId;
-  String? factAddrSettlementId;
-  String? factAddrSubwayId;
+  int? factAddrCityId;
+  int? factAddrSettlementId;
+  int? factAddrSubwayId;
   String? factAddrStreet;
   String? factAddrBuilding;
   String? factAddrApt;
-  String? height;
-  String? shoulderWidth;
-  String? sleeveLength;
-  String? schrittlange;
-  String? footSize;
-  String? waistGirth;
-  String? chest;
-  String? hip;
-  String? headIrcumference;
+  int? height;
+  int? shoulderWidth;
+  int? sleeveLength;
+  int? schrittlange;
+  int? footSize;
+  int? waistGirth;
+  int? chest;
+  int? hip;
+  int? headCircumference;
   String? medicalRestrictionsDescription;
-  String? isMedicialRestrictions;
+  bool? isMedicialRestrictions;
   String? specialWorkingConditions;
   String? specialWorkingConditionsDescription;
-  String? englishLevel;
+  int? englishLevel;
   String? passport;
   String? iTN;
   String? iNILA;
   String? volunteerBookNumber;
   String? educationLevel;
-  String? haveVolunteerExperience;
-  String? haveTeamleadExperience;
+  bool? haveVolunteerExperience;
+  bool? haveTeamleadExperience;
   int? userId;
   bool? isNeedLiveApartament;
-  String? photo;
-  String? clothesSize;
+  Map<String, dynamic>? photo;
+  Map<String, dynamic>? clothesSize;
   List<dynamic>? languages;
   List<dynamic>? medicalRestrictions;
-  String? passportFile;
-  String? passportFileSecond;
-  String? iTNFile;
-  String? iNILAFile;
-  String? volunteerBookFile;
-  String? resumeFile;
+  Map<String, dynamic>? passportFile;
+  Map<String, dynamic>? passportFileSecond;
+  Map<String, dynamic>? iTNFile;
+  Map<String, dynamic>? iNILAFile;
+  Map<String, dynamic>? volunteerBookFile;
+  Map<String, dynamic>? resumeFile;
   List<dynamic>? education;
   List<dynamic>? experience;
   List<dynamic>? volunteerExperience;
   List<dynamic>? teamleadExperience;
   List<Application>? application;
   List<dynamic>? vaccination;
-  String? registrationAddrCity;
-  String? registrationAddrSettlement;
-  String? factAddrCity;
-  String? factAddrSettlement;
+  Map<String, dynamic>? registrationAddrCity;
+  Map<String, dynamic>? registrationAddrSettlement;
+  Map<String, dynamic>? factAddrCity;
+  Map<String, dynamic>? factAddrSettlement;
 
   User(
       {this.id,
@@ -117,7 +117,7 @@ class User {
         this.waistGirth,
         this.chest,
         this.hip,
-        this.headIrcumference,
+        this.headCircumference,
         this.medicalRestrictionsDescription,
         this.isMedicialRestrictions,
         this.specialWorkingConditions,
@@ -196,7 +196,7 @@ class User {
     data['waistGirth'] = this.waistGirth;
     data['chest'] = this.chest;
     data['hip'] = this.hip;
-    data['headСircumference'] = this.headIrcumference;
+    data['headСircumference'] = this.headCircumference;
     data['medicalRestrictionsDescription'] =
         this.medicalRestrictionsDescription;
     data['isMedicialRestrictions'] = this.isMedicialRestrictions;
@@ -238,7 +238,7 @@ class User {
     return data;
   }
 
-  
+
 }
 
 User _$UserFromJson(Map<String, dynamic> json) {
@@ -282,7 +282,7 @@ User _$UserFromJson(Map<String, dynamic> json) {
     waistGirth: json['waistGirth'],
     chest: json['chest'],
     hip: json['hip'],
-    headIrcumference: json['headСircumference'],
+    headCircumference: json['headСircumference'],
     medicalRestrictionsDescription: json['medicalRestrictionsDescription'],
     isMedicialRestrictions: json['isMedicialRestrictions'],
     specialWorkingConditions: json['specialWorkingConditions'],
@@ -326,31 +326,31 @@ User _$UserFromJson(Map<String, dynamic> json) {
 
 class Application {
   int id;
-  String blockId;
-  String managerId;
+  int blockId;
+  int managerId;
   String interviewDate;
   bool isAgreedWithRules;
   bool isLeader;
   bool isReserve;
-  String badge;
+  int badge;
   int employeeId;
   int interviewAppointmentCount;
   String rejectReasonText;
   String jobOfferAt;
   String lastMailingShiftsHash;
-  String event;
+  Map<String, dynamic> event;
   Status status;
-  String fSOStatus;
-  String block;
-  String area;
-  String team;
+  Map<String, dynamic> fSOStatus;
+  Map<String, dynamic> block;
+  Map<String, dynamic> area;
+  Map<String, dynamic> team;
   Role role;
-  String typeOfEmployee;
-  String interviewResult;
+  Map<String, dynamic> typeOfEmployee;
+  Map<String, dynamic> interviewResult;
   List<dynamic> desiredFunction;
   List<dynamic> desiredPosition;
-  String position;
-  String function;
+  List<dynamic> position;
+  List<dynamic> function;
   List<dynamic> comments;
   String rejectReason;
 

@@ -50,13 +50,17 @@ class _RestClient implements RestClient {
   }
 
   @override
-  Future<List<News>> getNews(token, map) async {
+  Future<List<News>> getNewsAll(map) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{r'Authorization': "Bearer ${token}"};
-    _headers.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(map);
+    debugPrint(_headers.toString());
+    debugPrint("Request News: ${Options(method: 'GET', headers: _headers, extra: _extra)
+        .compose(_dio.options, 'news/list',
+        queryParameters: queryParameters, data: _data)
+        .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl).uri.data}");
     final _result = await _dio.fetch<List<dynamic>>(_setStreamType<List<News>>(
         Options(method: 'GET', headers: _headers, extra: _extra)
             .compose(_dio.options, 'news/list',

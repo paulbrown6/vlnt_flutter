@@ -17,7 +17,7 @@ class UserViewModelImpl extends UserViewModel{
       _profileController.stream.map((event) => event);
 
   @override
-  String? get userAvatar => _user!.photo;
+  String? get userAvatar => "http://dev.vlnt.expoforum.ru/api/static${_user!.photo!['url']}";
 
   @override
   String? get userName => "${_user!.firstName}  ${_user!.lastName}";

@@ -60,7 +60,6 @@ class ApiRequest {
     if (token == null){
       return;
     }
-    client.getProfile(token).toString();
     try {
       await client.getProfile(token).then((response) {
             if (response != null) {
@@ -76,7 +75,6 @@ class ApiRequest {
     }
     userModel.inputProfile.add(event);
     debugPrint("event = $event");
-    debugPrint(client.getProfile(token).toString());
     if (event) {
       userModel.dispose();
       UserModel().setUserLoad(event);
@@ -90,7 +88,7 @@ class ApiRequest {
       return;
     }
     try {
-      await client.getNews(token, {"page": page, "limit": limit,
+      await client.getNewsAll({"page": page, "limit": limit,
         "area": 0, "team": 0, "lang": "ru", "block": 0}).then((response) {
         if (response != null) {
           debugPrint(response.toString());
@@ -98,7 +96,7 @@ class ApiRequest {
           event = true;
         }},
           onError: (error) {
-            debugPrint("Error: ${error.toString()}");
+            debugPrint("Error News: ${error.toString()}");
           });
     } catch (e) {
       debugPrint(e.toString());

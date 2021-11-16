@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:retrofit/retrofit.dart';
 import 'package:dio_http/dio_http.dart';
 import 'package:vlnt_flutter/entity/api/news.dart';
@@ -17,5 +18,5 @@ abstract class RestClient {
   Future<User> getProfile(@Header("Authorization") String token);
 
   @GET("news/list")
-  Future<List<News>> getNews(@Header("Authorization") String token, @Body() Map<String, dynamic> map);
+  Future<List<News>> getNewsAll(@Body() Map<String, dynamic> map);
 }
