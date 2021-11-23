@@ -22,6 +22,8 @@ class UserViewModelImpl extends UserViewModel{
   @override
   String? get userName => "${_user!.firstName}  ${_user!.lastName}";
 
+  User? get user => _user;
+
   @override
   String get token => _token;
 

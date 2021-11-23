@@ -156,85 +156,85 @@ class User {
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['lastName'] = this.lastName;
-    data['translitLastname'] = this.translitLastname;
-    data['firstName'] = this.firstName;
-    data['translitFirstName'] = this.translitFirstName;
-    data['patronymic'] = this.patronymic;
-    data['translitPatronymic'] = this.translitPatronymic;
-    data['email'] = this.email;
-    data['phoneNumber'] = this.phoneNumber;
-    data['PDAgreement'] = this.pDAgreement;
-    data['shouldSendNotifications'] = this.shouldSendNotifications;
-    data['FBLink'] = this.fBLink;
-    data['VKLink'] = this.vKLink;
-    data['GoogleId'] = this.googleId;
-    data['isInVolunteerCenter'] = this.isInVolunteerCenter;
-    data['volunteerCenter'] = this.volunteerCenter;
-    data['birthday'] = this.birthday;
-    data['citizenshipCountryId'] = this.citizenshipCountryId;
-    data['registrationAddrCityId'] = this.registrationAddrCityId;
-    data['registrationAddrSettlementId'] = this.registrationAddrSettlementId;
-    data['registrationAddrSubwayId'] = this.registrationAddrSubwayId;
-    data['registrationAddrStreet'] = this.registrationAddrStreet;
-    data['registrationAddrBuilding'] = this.registrationAddrBuilding;
-    data['registrationAddrApt'] = this.registrationAddrApt;
-    data['isSameAsRegistrationAddress'] = this.isSameAsRegistrationAddress;
-    data['factAddrCityId'] = this.factAddrCityId;
-    data['factAddrSettlementId'] = this.factAddrSettlementId;
-    data['factAddrSubwayId'] = this.factAddrSubwayId;
-    data['factAddrStreet'] = this.factAddrStreet;
-    data['factAddrBuilding'] = this.factAddrBuilding;
-    data['factAddrApt'] = this.factAddrApt;
-    data['height'] = this.height;
-    data['shoulderWidth'] = this.shoulderWidth;
-    data['sleeveLength'] = this.sleeveLength;
-    data['schrittlange'] = this.schrittlange;
-    data['footSize'] = this.footSize;
-    data['waistGirth'] = this.waistGirth;
-    data['chest'] = this.chest;
-    data['hip'] = this.hip;
-    data['headСircumference'] = this.headCircumference;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['id'] = id;
+    data['lastName'] = lastName;
+    data['translitLastname'] = translitLastname;
+    data['firstName'] = firstName;
+    data['translitFirstName'] = translitFirstName;
+    data['patronymic'] = patronymic;
+    data['translitPatronymic'] = translitPatronymic;
+    data['email'] = email;
+    data['phoneNumber'] = phoneNumber;
+    data['PDAgreement'] = pDAgreement;
+    data['shouldSendNotifications'] = shouldSendNotifications;
+    data['FBLink'] = fBLink;
+    data['VKLink'] = vKLink;
+    data['GoogleId'] = googleId;
+    data['isInVolunteerCenter'] = isInVolunteerCenter;
+    data['volunteerCenter'] = volunteerCenter;
+    data['birthday'] = birthday;
+    data['citizenshipCountryId'] = citizenshipCountryId;
+    data['registrationAddrCityId'] = registrationAddrCityId;
+    data['registrationAddrSettlementId'] = registrationAddrSettlementId;
+    data['registrationAddrSubwayId'] = registrationAddrSubwayId;
+    data['registrationAddrStreet'] = registrationAddrStreet;
+    data['registrationAddrBuilding'] = registrationAddrBuilding;
+    data['registrationAddrApt'] = registrationAddrApt;
+    data['isSameAsRegistrationAddress'] = isSameAsRegistrationAddress;
+    data['factAddrCityId'] = factAddrCityId;
+    data['factAddrSettlementId'] = factAddrSettlementId;
+    data['factAddrSubwayId'] = factAddrSubwayId;
+    data['factAddrStreet'] = factAddrStreet;
+    data['factAddrBuilding'] = factAddrBuilding;
+    data['factAddrApt'] = factAddrApt;
+    data['height'] = height;
+    data['shoulderWidth'] = shoulderWidth;
+    data['sleeveLength'] = sleeveLength;
+    data['schrittlange'] = schrittlange;
+    data['footSize'] = footSize;
+    data['waistGirth'] = waistGirth;
+    data['chest'] = chest;
+    data['hip'] = hip;
+    data['headСircumference'] = headCircumference;
     data['medicalRestrictionsDescription'] =
-        this.medicalRestrictionsDescription;
-    data['isMedicialRestrictions'] = this.isMedicialRestrictions;
-    data['specialWorkingConditions'] = this.specialWorkingConditions;
+        medicalRestrictionsDescription;
+    data['isMedicialRestrictions'] = isMedicialRestrictions;
+    data['specialWorkingConditions'] = specialWorkingConditions;
     data['specialWorkingConditionsDescription'] =
-        this.specialWorkingConditionsDescription;
-    data['englishLevel'] = this.englishLevel;
-    data['passport'] = this.passport;
-    data['ITN'] = this.iTN;
-    data['INILA'] = this.iNILA;
-    data['volunteerBookNumber'] = this.volunteerBookNumber;
-    data['educationLevel'] = this.educationLevel;
-    data['haveVolunteerExperience'] = this.haveVolunteerExperience;
-    data['haveTeamleadExperience'] = this.haveTeamleadExperience;
-    data['userId'] = this.userId;
-    data['isNeedLiveApartament'] = this.isNeedLiveApartament;
-    data['photo'] = this.photo;
-    data['clothesSize'] = this.clothesSize;
-    data['languages'] = this.languages;
-    data['medicalRestrictions'] = this.medicalRestrictions;
-    data['passportFile'] = this.passportFile;
-    data['passportFileSecond'] = this.passportFileSecond;
-    data['ITNFile'] = this.iTNFile;
-    data['INILAFile'] = this.iNILAFile;
-    data['volunteerBookFile'] = this.volunteerBookFile;
-    data['resumeFile'] = this.resumeFile;
-    data['education'] = this.education;
-    data['experience'] = this.experience;
-    data['volunteerExperience'] = this.volunteerExperience;
-    data['teamleadExperience'] = this.teamleadExperience;
-    if (this.application != null) {
-      data['application'] = this.application!.map((v) => v.toJson()).toList();
+        specialWorkingConditionsDescription;
+    data['englishLevel'] = englishLevel;
+    data['passport'] = passport;
+    data['ITN'] = iTN;
+    data['INILA'] = iNILA;
+    data['volunteerBookNumber'] = volunteerBookNumber;
+    data['educationLevel'] = educationLevel;
+    data['haveVolunteerExperience'] = haveVolunteerExperience;
+    data['haveTeamleadExperience'] = haveTeamleadExperience;
+    data['userId'] = userId;
+    data['isNeedLiveApartament'] = isNeedLiveApartament;
+    data['photo'] = photo;
+    data['clothesSize'] = clothesSize;
+    data['languages'] = languages;
+    data['medicalRestrictions'] = medicalRestrictions;
+    data['passportFile'] = passportFile;
+    data['passportFileSecond'] = passportFileSecond;
+    data['ITNFile'] = iTNFile;
+    data['INILAFile'] = iNILAFile;
+    data['volunteerBookFile'] = volunteerBookFile;
+    data['resumeFile'] = resumeFile;
+    data['education'] = education;
+    data['experience'] = experience;
+    data['volunteerExperience'] = volunteerExperience;
+    data['teamleadExperience'] = teamleadExperience;
+    if (application != null) {
+      data['application'] = application!.map((v) => v.toJson()).toList();
     }
-    data['vaccination'] = this.vaccination;
-    data['registrationAddrCity'] = this.registrationAddrCity;
-    data['registrationAddrSettlement'] = this.registrationAddrSettlement;
-    data['factAddrCity'] = this.factAddrCity;
-    data['factAddrSettlement'] = this.factAddrSettlement;
+    data['vaccination'] = vaccination;
+    data['registrationAddrCity'] = registrationAddrCity;
+    data['registrationAddrSettlement'] = registrationAddrSettlement;
+    data['factAddrCity'] = factAddrCity;
+    data['factAddrSettlement'] = factAddrSettlement;
     return data;
   }
 
@@ -314,7 +314,7 @@ User _$UserFromJson(Map<String, dynamic> json) {
     teamleadExperience: json['teamleadExperience'],
     application: json['application'].forEach((v) {
       var application = [];
-      application.add(new Application.fromJson(v));
+      application.add(Application.fromJson(v));
     }),
     vaccination: json['vaccination'],
     registrationAddrCity: json['registrationAddrCity'],
@@ -325,185 +325,424 @@ User _$UserFromJson(Map<String, dynamic> json) {
 }
 
 class Application {
-  int id;
-  int blockId;
-  int managerId;
-  String interviewDate;
-  bool isAgreedWithRules;
-  bool isLeader;
-  bool isReserve;
-  int badge;
-  int employeeId;
-  int interviewAppointmentCount;
-  String rejectReasonText;
-  String jobOfferAt;
-  String lastMailingShiftsHash;
-  Map<String, dynamic> event;
-  Status status;
-  Map<String, dynamic> fSOStatus;
-  Map<String, dynamic> block;
-  Map<String, dynamic> area;
-  Map<String, dynamic> team;
-  Role role;
-  Map<String, dynamic> typeOfEmployee;
-  Map<String, dynamic> interviewResult;
-  List<dynamic> desiredFunction;
-  List<dynamic> desiredPosition;
-  List<dynamic> position;
-  List<dynamic> function;
-  List<dynamic> comments;
-  String rejectReason;
+  int? id;
+  int? blockId;
+  int? managerId;
+  String? interviewDate;
+  bool? isAgreedWithRules;
+  bool? isLeader;
+  bool? isReserve;
+  String? badge;
+  int? employeeId;
+  int? interviewAppointmentCount;
+  String? rejectReasonText;
+  String? jobOfferAt;
+  String? lastMailingShiftsHash;
+  String? event;
+  Status? status;
+  String? fSOStatus;
+  Block? block;
+  Areas? area;
+  Teams? team;
+  Role? role;
+  String? typeOfEmployee;
+  InterviewResult? interviewResult;
+  List<DesiredFunction>? desiredFunction;
+  List<dynamic>? desiredPosition;
+  String? position;
+  String? function;
+  List<dynamic>? comments;
+  String? rejectReason;
 
   Application(
-      {required this.id,
-      required this.blockId,
-      required this.managerId,
-      required this.interviewDate,
-      required this.isAgreedWithRules,
-      required this.isLeader,
-      required this.isReserve,
-      required this.badge,
-      required this.employeeId,
-      required this.interviewAppointmentCount,
-      required this.rejectReasonText,
-      required this.jobOfferAt,
-      required this.lastMailingShiftsHash,
-      required this.event,
-      required this.status,
-      required this.fSOStatus,
-      required this.block,
-      required this.area,
-      required this.team,
-      required this.role,
-      required this.typeOfEmployee,
-      required this.interviewResult,
-      required this.desiredFunction,
-      required this.desiredPosition,
-      required this.position,
-      required this.function,
-      required this.comments,
-      required this.rejectReason});
+      {this.id,
+        this.blockId,
+        this.managerId,
+        this.interviewDate,
+        this.isAgreedWithRules,
+        this.isLeader,
+        this.isReserve,
+        this.badge,
+        this.employeeId,
+        this.interviewAppointmentCount,
+        this.rejectReasonText,
+        this.jobOfferAt,
+        this.lastMailingShiftsHash,
+        this.event,
+        this.status,
+        this.fSOStatus,
+        this.block,
+        this.area,
+        this.team,
+        this.role,
+        this.typeOfEmployee,
+        this.interviewResult,
+        this.desiredFunction,
+        this.desiredPosition,
+        this.position,
+        this.function,
+        this.comments,
+        this.rejectReason});
 
-  factory Application.fromJson(Map<String, dynamic> json) =>
-      _$ApplicationFromJson(json);
+  Application.fromJson(Map<String, dynamic> json) {
+    id = json['id'];
+    blockId = json['blockId'];
+    managerId = json['managerId'];
+    interviewDate = json['interviewDate'];
+    isAgreedWithRules = json['isAgreedWithRules'];
+    isLeader = json['isLeader'];
+    isReserve = json['isReserve'];
+    badge = json['badge'];
+    employeeId = json['employeeId'];
+    interviewAppointmentCount = json['interviewAppointmentCount'];
+    rejectReasonText = json['rejectReasonText'];
+    jobOfferAt = json['jobOfferAt'];
+    lastMailingShiftsHash = json['lastMailingShiftsHash'];
+    event = json['event'];
+    status =
+    json['status'] != null ? Status.fromJson(json['status']) : null;
+    fSOStatus = json['FSOStatus'];
+    block = json['block'] != null ? Block.fromJson(json['block']) : null;
+    area = json['area'] != null ? Areas.fromJson(json['area']) : null;
+    team = json['team'] != null ? Teams.fromJson(json['team']) : null;
+    role = json['role'] != null ? Role.fromJson(json['role']) : null;
+    typeOfEmployee = json['typeOfEmployee'];
+    interviewResult = json['interviewResult'] != null
+        ? InterviewResult.fromJson(json['interviewResult'])
+        : null;
+    if (json['desiredFunction'] != null) {
+      desiredFunction = <DesiredFunction>[];
+      json['desiredFunction'].forEach((v) {
+        desiredFunction!.add(DesiredFunction.fromJson(v));
+      });
+    }
+    if (json['desiredPosition'] != null) {
+      desiredPosition = <dynamic>[];
+      json['desiredPosition'].forEach((v) {
+        // desiredPosition.add(v);
+      });
+    }
+    position = json['position'];
+    function = json['function'];
+    if (json['comments'] != null) {
+      comments = <dynamic>[];
+      json['comments'].forEach((v) {
+        // comments.add(v.fromJson());
+      });
+    }
+    rejectReason = json['rejectReason'];
+  }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['blockId'] = this.blockId;
-    data['managerId'] = this.managerId;
-    data['interviewDate'] = this.interviewDate;
-    data['isAgreedWithRules'] = this.isAgreedWithRules;
-    data['isLeader'] = this.isLeader;
-    data['isReserve'] = this.isReserve;
-    data['badge'] = this.badge;
-    data['employeeId'] = this.employeeId;
-    data['interviewAppointmentCount'] = this.interviewAppointmentCount;
-    data['rejectReasonText'] = this.rejectReasonText;
-    data['jobOfferAt'] = this.jobOfferAt;
-    data['lastMailingShiftsHash'] = this.lastMailingShiftsHash;
-    data['event'] = this.event;
-    if (this.status != null) {
-      data['status'] = this.status.toJson();
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['id'] = id;
+    data['blockId'] = blockId;
+    data['managerId'] = managerId;
+    data['interviewDate'] = interviewDate;
+    data['isAgreedWithRules'] = isAgreedWithRules;
+    data['isLeader'] = isLeader;
+    data['isReserve'] = isReserve;
+    data['badge'] = badge;
+    data['employeeId'] = employeeId;
+    data['interviewAppointmentCount'] = interviewAppointmentCount;
+    data['rejectReasonText'] = rejectReasonText;
+    data['jobOfferAt'] = jobOfferAt;
+    data['lastMailingShiftsHash'] = lastMailingShiftsHash;
+    data['event'] = event;
+    if (status != null) {
+      data['status'] = status!.toJson();
     }
-    data['FSOStatus'] = this.fSOStatus;
-    data['block'] = this.block;
-    data['area'] = this.area;
-    data['team'] = this.team;
-    if (this.role != null) {
-      data['role'] = this.role.toJson();
+    data['FSOStatus'] = fSOStatus;
+    if (block != null) {
+      data['block'] = block!.toJson();
     }
-    data['typeOfEmployee'] = this.typeOfEmployee;
-    data['interviewResult'] = this.interviewResult;
-    data['desiredFunction'] = this.desiredFunction;
-    data['desiredPosition'] = this.desiredPosition;
-    data['position'] = this.position;
-    data['function'] = this.function;
-    data['comments'] = this.comments;
-    data['rejectReason'] = this.rejectReason;
+    if (area != null) {
+      data['area'] = area!.toJson();
+    }
+    if (team != null) {
+      data['team'] = team!.toJson();
+    }
+    if (role != null) {
+      data['role'] = role!.toJson();
+    }
+    data['typeOfEmployee'] = typeOfEmployee;
+    if (interviewResult != null) {
+      data['interviewResult'] = interviewResult!.toJson();
+    }
+    if (desiredFunction != null) {
+      data['desiredFunction'] =
+          desiredFunction!.map((v) => v.toJson()).toList();
+    }
+    if (desiredPosition != null) {
+      data['desiredPosition'] =
+          desiredPosition!.map((v) => v.toJson()).toList();
+    }
+    data['position'] = position;
+    data['function'] = function;
+    if (comments != null) {
+      data['comments'] = comments!.map((v) => v.toJson()).toList();
+    }
+    data['rejectReason'] = rejectReason;
     return data;
   }
-}
-
-Application _$ApplicationFromJson(Map<String, dynamic> json) {
-  return Application(
-      id: json['id'],
-      blockId: json['blockId'],
-      managerId: json['managerId'],
-      interviewDate: json['interviewDate'],
-      isAgreedWithRules: json['isAgreedWithRules'],
-      isLeader: json['isLeader'],
-      isReserve: json['isReserve'],
-      badge: json['badge'],
-      employeeId: json['employeeId'],
-      interviewAppointmentCount: json['interviewAppointmentCount'],
-      rejectReasonText: json['rejectReasonText'],
-      jobOfferAt: json['jobOfferAt'],
-      lastMailingShiftsHash: json['lastMailingShiftsHash'],
-      event: json['event'],
-      status: Status.fromJson(json['status']),
-      fSOStatus: json['FSOStatus'],
-      block: json['block'],
-      area: json['area'],
-      team: json['team'],
-      role: Role.fromJson(json['role']),
-      typeOfEmployee: json['typeOfEmployee'],
-      interviewResult: json['interviewResult'],
-      desiredFunction: json['desiredFunction'],
-      desiredPosition: json['desiredPosition'],
-      position: json['position'],
-      function: json['function'],
-      comments: json['comments'],
-      rejectReason: json['rejectReason']);
 }
 
 class Status {
-  int id;
-  String description;
+  int? id;
+  String? description;
 
-  Status({required this.id, required this.description});
+  Status({this.id, this.description});
 
-  factory Status.fromJson(Map<String, dynamic> json) =>
-      _$StatusFromJson(json);
+  Status.fromJson(Map<String, dynamic> json) {
+    id = json['id'];
+    description = json['description'];
+  }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['description'] = this.description;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['id'] = id;
+    data['description'] = description;
     return data;
   }
 }
 
-Status _$StatusFromJson(Map<String, dynamic> json) {
-  return Status(
-      id : json['id'],
-      description : json['description'],
-  );
+class Block {
+  int? id;
+  String? description;
+  List<Areas>? areas;
+
+  Block({this.id, this.description, this.areas});
+
+  Block.fromJson(Map<String, dynamic> json) {
+    id = json['id'];
+    description = json['description'];
+    if (json['areas'] != null) {
+      areas = <Areas>[];
+      json['areas'].forEach((v) {
+        areas!.add(Areas.fromJson(v));
+      });
+    }
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['id'] = id;
+    data['description'] = description;
+    if (areas != null) {
+      data['areas'] = areas!.map((v) => v.toJson()).toList();
+    }
+    return data;
+  }
+}
+
+class Areas {
+  int? id;
+  String? description;
+  int? blockId;
+  List<Teams>? teams;
+
+  Areas({this.id, this.description, this.blockId, this.teams});
+
+  Areas.fromJson(Map<String, dynamic> json) {
+    id = json['id'];
+    description = json['description'];
+    blockId = json['blockId'];
+    if (json['teams'] != null) {
+      teams = <Teams>[];
+      json['teams'].forEach((v) {
+        teams!.add(Teams.fromJson(v));
+      });
+    }
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['id'] = id;
+    data['description'] = description;
+    data['blockId'] = blockId;
+    if (teams != null) {
+      data['teams'] = teams!.map((v) => v.toJson()).toList();
+    }
+    return data;
+  }
+}
+
+class Teams {
+  int? id;
+  String? description;
+  int? areaId;
+
+  Teams({this.id, this.description, this.areaId});
+
+  Teams.fromJson(Map<String, dynamic> json) {
+    id = json['id'];
+    description = json['description'];
+    areaId = json['areaId'];
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['id'] = id;
+    data['description'] = description;
+    data['areaId'] = areaId;
+    return data;
+  }
 }
 
 class Role {
-  int id;
-  String description;
-  bool isTemporary;
+  int? id;
+  String? description;
+  bool? isTemporary;
 
-  Role({required this.id, required this.description, required this.isTemporary});
+  Role({this.id, this.description, this.isTemporary});
 
-  factory Role.fromJson(Map<String, dynamic> json) =>
-      _$RoleFromJson(json);
+  Role.fromJson(Map<String, dynamic> json) {
+    id = json['id'];
+    description = json['description'];
+    isTemporary = json['isTemporary'];
+  }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['description'] = this.description;
-    data['isTemporary'] = this.isTemporary;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['id'] = id;
+    data['description'] = description;
+    data['isTemporary'] = isTemporary;
     return data;
   }
 }
 
-Role _$RoleFromJson(Map<String, dynamic> json) {
-  return Role(
-      id : json['id'],
-      description : json['description'],
-      isTemporary : json['isTemporary'],
-  );
+class InterviewResult {
+  int? id;
+  String? date;
+  String? time;
+  int? motivation;
+  int? responsibility;
+  int? stressTolerance;
+  int? teamwork;
+  int? communicate;
+  int? leadership;
+  String? comment;
+  String? absence;
+  String? createdAt;
+  List<dynamic>? distribution;
+  EnglishLevel? englishLevel;
+
+  InterviewResult(
+      {this.id,
+        this.date,
+        this.time,
+        this.motivation,
+        this.responsibility,
+        this.stressTolerance,
+        this.teamwork,
+        this.communicate,
+        this.leadership,
+        this.comment,
+        this.absence,
+        this.createdAt,
+        this.distribution,
+        this.englishLevel});
+
+  InterviewResult.fromJson(Map<String, dynamic> json) {
+    id = json['id'];
+    date = json['date'];
+    time = json['time'];
+    motivation = json['motivation'];
+    responsibility = json['responsibility'];
+    stressTolerance = json['stressTolerance'];
+    teamwork = json['teamwork'];
+    communicate = json['communicate'];
+    leadership = json['leadership'];
+    comment = json['comment'];
+    absence = json['absence'];
+    createdAt = json['createdAt'];
+    if (json['distribution'] != null) {
+      distribution = <dynamic>[];
+      json['distribution'].forEach((v) {
+        // distribution.add(fromJson(v));
+      });
+    }
+    englishLevel = json['englishLevel'] != null
+        ? EnglishLevel.fromJson(json['englishLevel'])
+        : null;
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['id'] = id;
+    data['date'] = date;
+    data['time'] = time;
+    data['motivation'] = motivation;
+    data['responsibility'] = responsibility;
+    data['stressTolerance'] = stressTolerance;
+    data['teamwork'] = teamwork;
+    data['communicate'] = communicate;
+    data['leadership'] = leadership;
+    data['comment'] = comment;
+    data['absence'] = absence;
+    data['createdAt'] = createdAt;
+    if (distribution != null) {
+      data['distribution'] = distribution!.map((v) => v.toJson()).toList();
+    }
+    if (englishLevel != null) {
+      data['englishLevel'] = englishLevel!.toJson();
+    }
+    return data;
+  }
+}
+
+class EnglishLevel {
+  int? id;
+  String? value;
+
+  EnglishLevel({this.id, this.value});
+
+  EnglishLevel.fromJson(Map<String, dynamic> json) {
+    id = json['id'];
+    value = json['value'];
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['id'] = id;
+    data['value'] = value;
+    return data;
+  }
+}
+
+class DesiredFunction {
+  int? id;
+  int? applicationId;
+  int? functionId;
+  int? order;
+  EnglishLevel? function;
+
+  DesiredFunction(
+      {this.id,
+        this.applicationId,
+        this.functionId,
+        this.order,
+        this.function});
+
+  DesiredFunction.fromJson(Map<String, dynamic> json) {
+    id = json['id'];
+    applicationId = json['applicationId'];
+    functionId = json['functionId'];
+    order = json['order'];
+    function = json['function'] != null
+        ? EnglishLevel.fromJson(json['function'])
+        : null;
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['id'] = id;
+    data['applicationId'] = applicationId;
+    data['functionId'] = functionId;
+    data['order'] = order;
+    if (function != null) {
+      data['function'] = function!.toJson();
+    }
+    return data;
+  }
 }

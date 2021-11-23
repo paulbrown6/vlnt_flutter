@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:vlnt_flutter/scopedmodels/login_model.dart';
 import 'package:vlnt_flutter/scopedmodels/news_model.dart';
 import 'package:vlnt_flutter/scopedmodels/user_model.dart';
+import 'package:vlnt_flutter/server/repository.dart';
 import 'package:vlnt_flutter/viewmodels/impl/form_view_model_impl.dart';
 import 'package:vlnt_flutter/viewmodels/impl/user_view_model_impl.dart';
 
@@ -30,6 +31,9 @@ class ApiRequest {
       return;
     }
     dio.options.headers["Content-Type"] = "application/json";
+    dio.options.headers["Access-Control-Allow-Origin"] = "*";
+    dio.options.headers["Access-Control-Allow-Methods"] = "POST, OPTIONS";
+    client = RestClient(dio);
     try {
       await client.signin({"username": login, "password": password}).then(
               (response) {
@@ -50,7 +54,7 @@ class ApiRequest {
       viewModel.dispose();
       LoginModel().setLogin(event);
       userModel.getProfile();
-      NewsModel().newsLoad();
+      NewsModel().newsAll();
     }
   }
 
@@ -81,15 +85,15 @@ class ApiRequest {
     }
   }
 
-  news(String token, int page, int limit) async {
+  news(String token, int page, int limit, int area, int team, int block) async {
     bool event = false;
-    dio.options.headers["Content-Type"] = "application/json";
     if (token == null){
       return;
     }
     try {
-      await client.getNewsAll({"page": page, "limit": limit,
-        "area": 0, "team": 0, "lang": "ru", "block": 0}).then((response) {
+      Repository clint = new Repository();
+      await clint.getNewsAll(token: token, body: {"page": page.toInt(), "limit": limit.toInt(),
+        "area": area.toInt(), "team": team.toInt(), "lang": "ru", "block": block.toInt()}).then((response) {
         if (response != null) {
           debugPrint(response.toString());
           NewsModel().setNews(response);

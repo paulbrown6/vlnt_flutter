@@ -79,7 +79,9 @@ class _ProfilePage extends State<ProfilePage> {
                           ),
                           IconTextButton(
                               icon: Icons.assignment_outlined,
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.pushNamed(context, '/news');
+                              },
                               buttonText: "Новости"),
                           SizedBox(
                             height: 10,
@@ -94,7 +96,9 @@ class _ProfilePage extends State<ProfilePage> {
                           ),
                           IconTextButton(
                             icon: Icons.wallet_travel_outlined,
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.pushNamed(context, '/work');
+                            },
                             buttonText: "Работа",
                           ),
                         ],

@@ -3,7 +3,7 @@ class News {
   String? title;
   String? description;
   String? shortDescription;
-  String? status;
+  int? status;
   String? createdAt;
   String? updatedAt;
   int? teamId;
@@ -39,7 +39,7 @@ class News {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
+    final Map<String, dynamic> data = Map<String, dynamic>();
     data['id'] = this.id;
     data['title'] = this.title;
     data['description'] = this.description;
@@ -51,6 +51,71 @@ class News {
     data['areaId'] = this.areaId;
     data['blockId'] = this.blockId;
     data['lang'] = this.lang;
+    return data;
+  }
+}
+
+class Description {
+  List<Blocks>? blocks;
+  Map<String, dynamic>? entityMap;
+
+  Description({this.blocks, this.entityMap});
+
+  Description.fromJson(Map<String, dynamic> json) {
+    if (json['blocks'] != null) {
+      blocks = <Blocks>[];
+      json['blocks'].forEach((v) { blocks!.add(Blocks.fromJson(v)); });
+    }
+    entityMap = json['entityMap'];
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = <String, dynamic>{};
+    if (blocks != null) {
+      data['blocks'] = blocks!.map((v) => v.toJson()).toList();
+    }
+    data['entityMap'] = entityMap;
+    return data;
+  }
+}
+
+class Blocks {
+  String? key;
+  String? text;
+  String? type;
+  int? depth;
+  List<dynamic>? inlineStyleRanges;
+  List<dynamic>? entityRanges;
+  Map<String, dynamic>? data;
+
+  Blocks(
+      {this.key,
+        this.text,
+        this.type,
+        this.depth,
+        this.inlineStyleRanges,
+        this.entityRanges,
+        this.data});
+
+  Blocks.fromJson(Map<String, dynamic> json) {
+    key = json['key'];
+    text = json['text'];
+    type = json['type'];
+    depth = json['depth'];
+    inlineStyleRanges = json['inlineStyleRanges'];
+    entityRanges = json['entityRanges'];
+    data = json['data'];
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['key'] = this.key;
+    data['text'] = this.text;
+    data['type'] = this.type;
+    data['depth'] = this.depth;
+    data['inlineStyleRanges'] = this.inlineStyleRanges;
+    data['entityRanges'] = this.entityRanges;
+    data['data'] = this.data;
     return data;
   }
 }

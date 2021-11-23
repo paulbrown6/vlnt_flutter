@@ -4,6 +4,7 @@ import 'package:vlnt_flutter/pages/auth_page.dart';
 import 'package:vlnt_flutter/pages/news_page.dart';
 import 'package:vlnt_flutter/pages/profile_page.dart';
 import 'package:vlnt_flutter/pages/start_page.dart';
+import 'package:vlnt_flutter/pages/work_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -27,6 +28,7 @@ class _MyHomePage extends State<MyApp> {
         '/auth': (context) => AuthPage(),
         '/profile': (context) => ProfilePage(),
         '/news': (context) => NewsPage(),
+        '/work': (context) => WorkPage(),
       },
     );
   }

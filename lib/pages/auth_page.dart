@@ -3,8 +3,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:scoped_model/scoped_model.dart';
 import 'package:vlnt_flutter/scopedmodels/login_model.dart';
 import 'package:vlnt_flutter/viewmodels/impl/form_view_model_impl.dart';
+import 'package:vlnt_flutter/widgets/bars/login_toolbar.dart';
 import 'package:vlnt_flutter/widgets/login_form.dart';
-import 'package:vlnt_flutter/widgets/toolbars/login_toolbar.dart';
 
 class AuthPage extends StatefulWidget {
   const AuthPage({Key? key}) : super(key: key);

@@ -53,19 +53,25 @@ class _RestClient implements RestClient {
   Future<List<News>> getNewsAll(map) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{};
-    final _data = <String, dynamic>{};
-    _data.addAll(map);
-    debugPrint(_headers.toString());
-    debugPrint("Request News: ${Options(method: 'GET', headers: _headers, extra: _extra)
-        .compose(_dio.options, 'news/list',
-        queryParameters: queryParameters, data: _data)
-        .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl).uri.data}");
+    final _headers = <String, dynamic>{
+      'Connection': "keep-alive",
+      'Accept': "application/json, text/plain, */*",
+      'Authorization': "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NDQ3LCJlbWFpbCI6InBhdWw2YnJvd242QGdtYWlsLmNvbSIsImlhdCI6MTYzNzEzMDY1MCwiZXhwIjoxNjM3MTQxNDUwfQ.p85vxPzAI6DQ7boy4_7FCO0tO-Wwsx2xoxH8Qed2fL8",
+      'LANG': "RU"
+    };
+    final _data = map;
+    debugPrint(_data.toString());
     final _result = await _dio.fetch<List<dynamic>>(_setStreamType<List<News>>(
         Options(method: 'GET', headers: _headers, extra: _extra)
             .compose(_dio.options, 'news/list',
                 queryParameters: queryParameters, data: _data)
-            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)))
+    .whenComplete(() {
+    debugPrint("complete:");
+    }).catchError((onError) {
+    debugPrint("error:${onError.toString()}");
+    });
+    debugPrint(_result.toString());
     var value = _result.data!
         .map((dynamic i) => News.fromJson(i as Map<String, dynamic>))
         .toList();
