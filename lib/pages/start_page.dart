@@ -38,7 +38,7 @@ class StartPage extends StatelessWidget{
                                   ScopedModel<LoginModel>(
                                     model: LoginModel(),
                                     child: ScopedModelDescendant<LoginModel>(
-                                      builder: (BuildContext context, Widget? inChild, LoginModel model) {
+                                      builder: (BuildContext context, Widget inChild, LoginModel model) {
                                         return GradientButton(
                                           onPressed: () {
                                             model.getLogin() ?

@@ -20,7 +20,7 @@ class _AuthPage extends State {
     return ScopedModel(
       model: LoginModel(),
       child: ScopedModelDescendant<LoginModel>(
-        builder: (BuildContext context, Widget? inChild, LoginModel model) {
+        builder: (BuildContext context, Widget inChild, LoginModel model) {
           if (model.getLogin()){
             WidgetsBinding.instance!.addPostFrameCallback((timeStamp) {
               Navigator.pushNamed(context, '/news');

@@ -46,7 +46,6 @@ class NewsPage extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              alignment: Alignment.topLeft,
               height: MediaQuery.of(context).size.height * 0.66,
               child: NewsTabs(),
             ),
