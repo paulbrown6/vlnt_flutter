@@ -90,7 +90,7 @@ class _WorkTabs extends State<WorkTabs> with SingleTickerProviderStateMixin {
         body: ScopedModel(
           model: NewsModel(),
           child: ScopedModelDescendant<NewsModel>(
-            builder: (BuildContext context, Widget inChild, NewsModel model) {
+            builder: (BuildContext context, Widget? inChild, NewsModel model) {
               return Builder(builder: (context) {
                 _context = context;
                 return TabBarView(

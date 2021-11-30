@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:vlnt_flutter/pages/auth_page.dart';
+import 'package:vlnt_flutter/pages/incident_page.dart';
 import 'package:vlnt_flutter/pages/news_page.dart';
 import 'package:vlnt_flutter/pages/profile_page.dart';
 import 'package:vlnt_flutter/pages/start_page.dart';
@@ -29,6 +30,7 @@ class _MyHomePage extends State<MyApp> {
         '/profile': (context) => ProfilePage(),
         '/news': (context) => NewsPage(),
         '/work': (context) => WorkPage(),
+        '/incident': (context) => IncidentPage(),
       },
     );
   }

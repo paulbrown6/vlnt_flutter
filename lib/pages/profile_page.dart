@@ -32,7 +32,7 @@ class _ProfilePage extends State<ProfilePage> {
                 child: ScopedModel(
                   model: UserModel(),
                   child: ScopedModelDescendant<UserModel>(
-                    builder: (BuildContext context, Widget inChild, UserModel model){
+                    builder: (BuildContext context, Widget? inChild, UserModel model){
                       debugPrint(_userModel.userAvatar.toString());
                       return Column(
                         children: [
@@ -88,8 +88,10 @@ class _ProfilePage extends State<ProfilePage> {
                           ),
                           IconTextButton(
                             icon: Icons.book_outlined,
-                            onPressed: () {},
-                            buttonText: "Обучение",
+                            onPressed: () {
+                              Navigator.pushNamed(context, '/incident');
+                            },
+                            buttonText: "Инциденты",
                           ),
                           SizedBox(
                             height: 10,
